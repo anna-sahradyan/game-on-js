@@ -5,14 +5,20 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Game On Js</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <title>Game On Js</title>
+
+    <script   type="module" src="script.js" defer></script>
 </head>
 <body>
-<div class="game">
-    <div id="dino"></div>
-    <div id="cactus"></div>
+<div class="container" data-container>
+    <div class="score" data-score>Score:0</div>
+    <div class="start-screen" data-start-screen>Press Any Key To Start</div>
+    <img src="/img/ground.png" alt="ground" class="ground" data-graund>
+    <img src="/img/ground.png" alt="ground" class="ground" data-graund>
+    <img src="/img/mush.webp" alt="cactus" class="cactus">
+    <img src="/img/dino-stationary.png" alt="dinoS" class="dino">
+
 </div>
 </body>
 </html>

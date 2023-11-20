@@ -1,55 +1,83 @@
-.game {
-    width: 600px;
-    height: 200px;
-    border-bottom: 1px solid #000;
-    margin: auto;
+html {
+    height: 100%;
+    box-sizing: border-box;
 }
 
-#dino {
-    width: 50px;
-    height: 50px;
-    background-image: url("img/dino1.png");
-    background-size: 50px 50px;
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: inherit;
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("/img/back.jpg");
+
+}
+
+.container {
     position: relative;
-    top: 150px;
+    overflow: hidden;
+
+
 }
 
-#cactus {
-    width: 20px;
-    height: 40px;
-    background-image: url("img/cactus4.png");
-    background-size: 20px 70px;
-    position: relative;
-    top: 110px;
-    left: 570px;
-    animation: cactusMov 3s infinite linear;
+
+.score {
+    position: absolute;
+    font-size: 3vmin;
+    right: 1vmin;
+    top: 1vmin;
+
 }
 
-@keyframes cactusMov {
-    0% {
-        left: 580px;
-    }
-    100%{
-        left: -20px;
-    }
+.start-screen {
+    position: absolute;
+    color: forestgreen;
+    font-size: 5vmin;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 }
-.jump{
-    animation: jump 1s linear;
+
+.hide {
+    display: none;
 }
-@keyframes jump {
-    0% {
-       top: 150px;
-    }
-    30%{
-        top:130px;
-    }
-    50%{
-       top:80px;
-    }
-    80%{
-        top:130px;
-    }
-    100%{
-        top: 150px;
-    }
+
+.ground {
+    --left: 0;
+    position: absolute;
+    width: 300%;
+    bottom: 0;
+    left: calc(var(--left) * 1%);
+}
+
+.dino {
+    --bottom: 0;
+    position: absolute;
+    left: 1%;
+    height: 30%;
+    bottom: calc(var(--bottom) * 1%);
+}
+
+.cactus {
+    position: absolute;
+    left: calc(var(--left) * 1%);
+    height: 10%;
+    bottom: 0;
 }
